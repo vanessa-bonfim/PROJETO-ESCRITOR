@@ -1,0 +1,144 @@
+
+/* Será resetado as margens externas e internas da página. 
+* Faz uma  alteração a propriedade padrão do box model,
+* usado para calcular larguras (widths) e alturas (heights) dos elementos. 
+* https://developer.mozilla.org/pt-BR/docs/Web/CSS/box-sizing
+* */
+* { 
+    margin: 0; /* Margens externas */
+    padding: 0; /* Margens internas */
+    box-sizing: border-box; /* Modelo de caixa */
+}
+
+
+body, html { 
+    font-family: system-ui; /* Definir tipo de fonte do html e corpo */
+    font-size: 14px; /* Definir peso(tamanho) da fonte do html e corpo (botões e inputs?) */
+}
+
+/* utils*/
+.horizontal-line { /* classe para as linhas horizontais */
+    margin: 5px 0; /* Definir margens externas /top and bottom 5px/ /right and left 0/ */
+    border-bottom: solid 1px #c3c3c3; /* Bordas inferiores solidas com 1 px de espessura */
+}
+
+/*flex - 
+* https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+* https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+.flex {
+    display: flex; /* Transforma em flex*/
+}
+
+.flex-justify-space-between {
+    
+    justify-content: space-between;  /* Coloca um espaço entre os itens. O primeiro (esqueda -> direita) fica colado a esquerda. O primeiro (direita -> esqueda)fica colado a direita
+    */
+   
+}
+
+.flex-col {
+    flex-direction: column; /* Direção em colunas /top -> bottom/ */
+}
+
+.page {
+    padding: 5px; /* Margem interna */
+    max-width: 980px; /* Largura máxima */
+    width: 100%; /* Largura. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai.*/
+    margin-left: auto; /* Margem esquerda externa */
+    margin-right: auto; /* Margem direita externa */
+
+}
+
+/* Menu */
+
+.menu {
+
+    width: 100%; /* Largura. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai.*/
+    background-color: #1a237e; /* Cor de fundo */
+    border-radius: 2px; /* Arredondamento das pontas das bordas */
+
+}
+
+.menu ul { /* Lista não ordenada dentro do menu */
+
+    height: 100%; /* Altura. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai.*/
+    display: flex; /* Tira do padrão(block) e deixa em flex */
+    align-items: center; /* Alinhar os itens no centro da linha atual do eixo cruzado */
+}
+
+.menu li { /*Lista dentro do menu*/
+
+    list-style-type: none; /* Sem o estilo da lista */
+    padding: 15px; /* Espaçamento internos em todos os lados */
+    transition: background-color 500ms ease; /* Transição na propridade background de 500ms com a velocidade de ease (inicia rápido e finaliza devagar) */
+}
+
+.menu li:hover { /* Seletor :hover é usado para selecionar este elemento ao passa o mouse. Neste caso a transição acima será feita neste li:hover */
+
+    background-color: #3949ab; /* Cor de fundo */
+} 
+
+.menu a {
+    
+    color: white; /* Cor do texto do link */
+    text-decoration: none; /* Sem a linha decorativa que fica abaixo do link */
+}
+
+.menu a:hover { /* Seletor :hover é usado para selecionar este elemento ao passa o mouse e ao selecionar coloca o text-decoration */
+
+    text-decoration: underline; /* Com decoração de linha */
+}
+
+
+/* form */
+
+.form .form-group {
+
+    margin-bottom: 8px; /* Margens externas inferiores */
+}
+
+.form input {
+
+    width: 100%; /* Largura. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai. */
+    border: solid 2px #9fa8da; /* Bordas solidas, com espessura e com cor */
+    outline: none; /* Sem contorno fora das bordas */
+    border-radius: 3px; /* Arredondamento das pontas das bordas */
+    padding: 8px; /* Margens internas */
+}
+
+.form button {
+    
+    cursor: pointer; /* Tipo de cursor */
+    background-color: #283593; /* Cor de fundo */
+    border: solid 1px #283593; /* Bodas solidas, com espessura e com cor */
+    color: white; /* Cor do texto do botão */
+    border-radius: 3px; /* Arredondamento das pontas das bordas */
+    padding: 5px 15px; /* Margens internas, primeiro valore é para superior e inferior, segundo valor é para direita e esquerda */
+    font-size: 1rem; /* Tamanho da fonte. Relativo ao tamanho da fonte do elemento raiz (REM). Unidade de comprimento relativo a outra propriedade, que neste caso é a raiz */
+}
+
+.form button:hover { /*  Seletor :hover é usado para selecionar este elemento ao passa o mouse e ao selecionar coloca a opacidade */
+
+    opacity: 0.9;
+}
+
+/* form-login */
+
+.form-login {
+
+    max-width: 480px; /* Largura máxima. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai.*/
+    width: 100%; /* Largura. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai.*/
+ 
+}
+
+/* flash-messages */
+
+.flash-messages {
+
+    background-color: #e65100; /* Cor de fundo */
+    padding: 8px; /* Margens internas */
+    border-radius: 3px; /* Arredondamento das pontas das bordas */
+    color: white; /* Cor do texto */
+}
