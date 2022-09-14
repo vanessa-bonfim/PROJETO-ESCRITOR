@@ -142,3 +142,12 @@ body, html {
     border-radius: 3px; /* Arredondamento das pontas das bordas */
     color: white; /* Cor do texto */
 }
+
+.table {
+    width: 100%;
+}
+
+.table th,
+.table td {
+    text-align: left;
+}

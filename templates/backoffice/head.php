@@ -18,14 +18,14 @@
                 <ul><?php if (is_authenticated()) :?>
                     <li><a href="<?php echo url_generate(['route' => 'red']); ?>">Red Wine</a></li> 
                     <li><a href="<?php echo url_generate(['route' => 'white']); ?>">White Wine</a></li>
-                    <li><a href="<?php echo url_generate(['route' => 'rubi']); ?>">Sobre Nós</a></li> 
+                    <li><a href="<?php echo url_generate(['route' => 'user_read']); ?>">Utilizadores</a></li> <!-- Esta route retorna a nossa lista de usuários -->
                     <li><a href="<?php echo url_generate(['route' => 'lbv']); ?>">Contacto</a></li>
                     <?php endif; ?>
                 </ul>
                 <ul>
                     <?php if (is_authenticated()) :?> <!-- Esta condição irá mostra a "li" se a função for true. Ficheiro auth.php-->
                        
-                        <li><a href="?route=dashboard">Dashboard</a></li> <!--  Ao clicar, redireciona para o que está na href -->
+                        <li><a href="<?php echo url_generate(['route' => 'dashboard']); ?>">Dashboard</a></li> <!--  Ao clicar, redireciona para o que está na href -->
                     
                     <?php endif; ?>
                     

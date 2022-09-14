@@ -34,7 +34,7 @@ $pdo = new PDO($dsn, DB_USER, DB_PASS); //Função nativa do PHP. A variável pd
 * query string : ?nome=Maria (1 chave, 1 valor) ou ?nome=Maria&idade=46 (quando se há mais de 1 valor)
 * 
 */
-if(empty($_GET['route'])){ // Se a super global estiver vazia.
+if(empty($_GET['route'])){ // Se a super global estiver vazia (chave router não existir).
     $page = 'home';
 } else { //se não estiver vazia.
     $page = $_GET["route"];
@@ -50,6 +50,7 @@ if (!empty($_GET['area']) && $_GET['area'] == 'admin') {
 } else {
     $layout_folder = 'frontoffice';
 }
+
 
 /*
 * A condição SWITCH é parecida com a IF.
