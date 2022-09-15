@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo PAGE_TITLE ?> </title> <!-- Echo retorna o titulo da página que está no ficheiro CONFIG.PHP -->
-    <link rel="stylesheet" href="public/css/style.css"> <!-- Importa o css -->
+    <link rel="stylesheet" href="public/css/backstyle.css"> <!-- Importa o css -->
 </head>
 <body>
 
@@ -15,14 +15,24 @@
             <nav class="menu flex flex-justify-space-between">
                 
                 <!-- Os HREFs já estão com as rotas configuradas ?route=..., e no ficheiro index.php há uma condição que retorna o login, caso route esteja vazio. -->
-                <ul><?php if (is_authenticated()) :?>
-                    <li><a href="<?php echo url_generate(['route' => 'red']); ?>">Red Wine</a></li> 
-                    <li><a href="<?php echo url_generate(['route' => 'white']); ?>">White Wine</a></li>
-                    <li><a href="<?php echo url_generate(['route' => 'user_read']); ?>">Utilizadores</a></li> <!-- Esta route retorna a nossa lista de usuários -->
-                    <li><a href="<?php echo url_generate(['route' => 'lbv']); ?>">Contacto</a></li>
+                <ul class="height">
+                    <?php if (is_authenticated()) :?>
+                
+                        <li class="re-position">
+                            <a href="">Opções</a> 
+                                
+                            <ul class="ab-position ">
+                                <li ><a href="<?php echo url_generate(['route' => 'user_create']); ?>">Criar Utilizador</a></li> 
+                                <li ><a href="<?php echo url_generate(['route' => 'user_update']); ?>">Atualizar Utilizador</a></li>
+                                <li ><a href="<?php echo url_generate(['route' => 'user_read']); ?>">Utilizadores</a></li> <!-- Esta route retorna a nossa lista de usuários -->
+                                <li ><a href="<?php echo url_generate(['route' => 'user_delete']); ?>">Deletar Utilizador</a></li>
+                            </ul>
+                        </li>
+                                
+                                              
                     <?php endif; ?>
                 </ul>
-                <ul>
+                <ul class="d-flex">
                     <?php if (is_authenticated()) :?> <!-- Esta condição irá mostra a "li" se a função for true. Ficheiro auth.php-->
                        
                         <li><a href="<?php echo url_generate(['route' => 'dashboard']); ?>">Dashboard</a></li> <!--  Ao clicar, redireciona para o que está na href -->

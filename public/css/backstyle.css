@@ -21,7 +21,9 @@ body, html {
     margin: 5px 0; /* Definir margens externas /top and bottom 5px/ /right and left 0/ */
     border-bottom: solid 1px #c3c3c3; /* Bordas inferiores solidas com 1 px de espessura */
 }
-
+.height{
+    height: 100%;
+}
 /*flex - 
 * https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
 * https://css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -63,9 +65,10 @@ body, html {
 
 .menu ul { /* Lista não ordenada dentro do menu */
 
-    height: 100%; /* Altura. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai.*/
-    display: flex; /* Tira do padrão(block) e deixa em flex */
+    /* height: 100%;  *//* Altura. Unidade de comprimento relativo a outra propriedade, que neste caso é relativo ao pai.*/
+   /*  display: flex; */ /* Tira do padrão(block) e deixa em flex */
     align-items: center; /* Alinhar os itens no centro da linha atual do eixo cruzado */
+    background-color: #1a237e;
 }
 
 .menu li { /*Lista dentro do menu*/
@@ -91,7 +94,29 @@ body, html {
     text-decoration: underline; /* Com decoração de linha */
 }
 
+.re-position:hover ul{
+    display: block;
+}
+.ab-position {
+    position: absolute; 
+    left: 0;
+    width: 150px;
+    top: 46px;
+    display: none;
+    
+}
 
+.re-position {
+    position: relative;
+}
+
+.d-block{
+    display: block;
+}
+
+.d-flex{
+    display: flex;
+}
 /* form */
 
 .form .form-group {
@@ -151,3 +176,4 @@ body, html {
 .table td {
     text-align: left;
 }
+

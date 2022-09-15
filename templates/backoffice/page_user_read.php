@@ -24,6 +24,7 @@ if ($sql->execute()) {
             <th>Login</th>
             <th>Criado</th>
             <th>Atualizado</th>
+            <th>Ações</th>
         </tr>
         <?php foreach ($users as $user) : ?>
         <tr>
@@ -32,6 +33,7 @@ if ($sql->execute()) {
             <td><?php echo $user['login'] ?></td>
             <td><?php echo $user['created_at'] ?></td>
             <td><?php echo $user['updated_at'] ?></td>
+            <td><a href="<?php echo url_generate(['route' => 'user_update']); ?>">Editar</a></td>
         </tr>
         <?php endforeach ?>
     </table>
