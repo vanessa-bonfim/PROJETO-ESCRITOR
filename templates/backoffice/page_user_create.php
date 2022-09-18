@@ -34,7 +34,7 @@ if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password
             <input type="password" name="password">
         </div>
         <div class="form-group">
-            <button>Login</button>
+            <button>Guardar</button>
         </div>
     </form>
 </div>

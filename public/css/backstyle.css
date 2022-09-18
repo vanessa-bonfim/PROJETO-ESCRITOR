@@ -94,10 +94,11 @@ body, html {
     text-decoration: underline; /* Com decoração de linha */
 }
 
-.re-position:hover ul{
+nav ul .p-relative:hover ul{
     display: block;
 }
-.ab-position {
+
+.p-absolute {
     position: absolute; 
     left: 0;
     width: 150px;
@@ -106,7 +107,7 @@ body, html {
     
 }
 
-.re-position {
+.p-relative {
     position: relative;
 }
 

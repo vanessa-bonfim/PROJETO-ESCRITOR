@@ -33,7 +33,8 @@ if ($sql->execute()) {
             <td><?php echo $user['login'] ?></td>
             <td><?php echo $user['created_at'] ?></td>
             <td><?php echo $user['updated_at'] ?></td>
-            <td><a href="<?php echo url_generate(['route' => 'user_update']); ?>">Editar</a></td>
+            <td><a href="<?php echo url_generate(['route' => 'user_update', 'id' => $user['id']]); ?>">Editar</a>|
+            <a href="<?php echo url_generate(['route' => 'user_delete', 'id' => $user['id']]); ?>">Apagar</a></td>
         </tr>
         <?php endforeach ?>
     </table>
