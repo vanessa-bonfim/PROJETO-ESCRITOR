@@ -8,5 +8,5 @@ if (!is_authenticated()) { //Se DIFERENTE(!) de VERDADEIRO,(Se eu não estiver a
    
     set_flash_message('Acesso negado: Faça login para ter acesso a esta página'); //Mostra esta mensagem por 1 sec.
 
-    url_redirect(['route' => 'login', 'area' => 'admin']); // Direciona para a página de login.
+    url_redirect(['route' => 'login']); // Direciona para a página de login.
 }

@@ -16,6 +16,7 @@
                 
                 <!-- Os HREFs já estão com as rotas configuradas ?route=..., e no ficheiro index.php há uma condição que retorna o login, caso route esteja vazio. -->
                 <ul class="height">
+
                     <?php if (is_authenticated()) :?>
                 
                         <li class="p-relative">
@@ -28,8 +29,7 @@
                                 <li ><a href="<?php echo url_generate(['route' => 'user_read']); ?>">Utilizadores</a></li> <!-- Esta route retorna a nossa lista de usuários -->
                                 
                             </ul>
-                        </li>
-                                
+                        </li>                              
                                               
                     <?php endif; ?>
                 </ul>
@@ -43,7 +43,7 @@
                     <li> <!-- Neste caso este "li" sempre será visivel com algum dos "a" dependendo da condição-->
                         <?php if (is_authenticated()) :?> <!-- Esta condição irá mostra "a" se a função for true. Ficheiro auth.php-->
                             
-                            <a class="user-login-button" href="<?php echo url_generate(['route' => 'authenticate']); ?>">LOGOUT</a>
+                            <a class="user-login-button" href="<?php echo url_generate(['route' => 'logout']); ?>">LOGOUT</a>
                         <?php else :?> <!-- senão será mostrado este "a" -->
 
                             <a class="user-login-button" href="<?php echo url_generate(['route' => 'login']); ?>">LOGIN</a>

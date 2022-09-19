@@ -76,6 +76,10 @@ switch ($page) { // Muda ou troca a variavel page caso:
         break;
 }
 
+if($_GET['area'] == 'admin' && !is_authenticated() && $page != 'login') {
+    set_flash_message('Acesso negado: Faça login para ter acesso a esta página');
+    url_redirect(['route' => 'login']);
+}
 
 /**
  * Constroi o caminho do ficheiro concatenando com o valor que vem 

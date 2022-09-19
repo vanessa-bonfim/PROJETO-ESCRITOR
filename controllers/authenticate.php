@@ -10,7 +10,7 @@ if (empty($_POST['username']) || empty($_POST['password'])) { // função empty 
     set_flash_message('Todos os campos são de preenchimento obrigatório!');
 
     //A função url_redirect() (função criada em url.php) redireciona para a página de login.
-    url_redirect(['route' => 'login', 'area' => 'admin']);
+    url_redirect(['route' => 'login']);
 
 }
 
@@ -28,7 +28,7 @@ $password = $_POST['password'];
  *  O que muda são os argumentos, seu uso evita problema com sql injection desde que usado corretamente.
 */
 //$query = 'SELECT name FROM users'; //A variável query recebe nosso código de consulta SQL. Para ter mais uma camada de segurança ao consultar, usandos "?"(bind) que ajuda a não acontecer um SQL injection que é uma vulnerabilidade de segurança na web que permite ataques.
-$user = db_query($pdo,  'SELECT name FROM users WHERE login = ? and password = ?', [$login, $password]);
+$user = db_query($pdo, 'SELECT name FROM users WHERE login = ? and password = ?', [$login, $password]);
 
 /* $sql = $pdo->prepare($query); //A variável slq recebe a preparação da da variável query/comando SQL. Prepara uma instrução para execução e retorna um objeto de instrução.
   
@@ -55,13 +55,13 @@ if (!empty($user[0])) { // condição é se as variáveis são iguais as constan
 
     set_flash_message('Utilizador autenticado com sucesso!'); // Mostra essa mensagem por 1 sec. (função criada em message.php)
 
-    url_redirect(['route' => 'dashboard','area' => 'admin']); // Redireciona para página dashboard. (função criada em url.php)
+    url_redirect(['route' => 'home']); // Redireciona para página dashboard. (função criada em url.php)
 
 } else {
     
     set_flash_message('Utilizador ou senha incorreta, tente novamente!');// Mostra essa mensagem por 1 sec. (função criada em message.php)
 
-    url_redirect(['route' => 'login', 'area' => 'admin']); // Redireciona para página login. (função criada em url.php)
+    url_redirect(['route' => 'login']); // Redireciona para página login. (função criada em url.php)
 }
 
 
