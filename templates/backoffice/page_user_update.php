@@ -6,12 +6,24 @@ if (empty($_GET['id']) || !(int)($_GET['id'])) {
     url_redirect(['route' => 'user_read']);
 }
 
-if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'])) {
+if (
+    !empty($_POST['name']) && 
+    !empty($_POST['login']) && 
+    !empty($_POST['password']) && 
+    !empty($_POST['picture'])
+    ){
     
-    $query = 'UPDATE users SET name = ?, login = ?, password = ? WHERE id = ?';    
+    $query = 'UPDATE users SET name = ?, login = ?, password = ?, picture = ? WHERE id = ?';    
     $sql = $pdo->prepare($query);
     
-    if ($sql->execute([$_POST['name'], $_POST['login'], $_POST['password'], $_GET['id']])) {
+    if ($sql->execute([
+        $_POST['name'], 
+        $_POST['login'], 
+        $_POST['password'], 
+        $_POST['picture'], 
+        $_GET['id']
+        ])) {
+
         $message = "Registo atualizado com sucesso";
     } else {
         $message = "Não foi atualizar o registo, tente novamente";
@@ -42,6 +54,10 @@ if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password
             <label for="name">Nome</label>
             <input type="text" name="name" value="<?php echo $user['name']; ?>">
         </div>
+        <div class="form-group flex flex-col">
+            <label for="name">Nome</label>
+            <input type="text" name="name" value="<?php echo $user['name']; ?>">
+        </div>
         <div class="form-group">
             <label for="name">Login</label>
             <input type="text" name="login" value="<?php echo $user['login']; ?>">
@@ -49,6 +65,10 @@ if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" name="password" value="<?php echo $user['password']; ?>">
+        </div>
+        <div class="form-group flex flex-col">
+            <label for="picture">Imagem Perfil</label>            
+            <input type="text" name="picture" value="<?php echo $user['picture']; ?>">
         </div>
         <div class="form-group">
             <button>Guardar</button>

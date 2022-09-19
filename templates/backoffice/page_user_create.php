@@ -1,12 +1,12 @@
 <?php
 
-if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password'])) {
+if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['picture']) ){
 
-    $query = 'INSERT INTO users (name, login, password) VALUES (?, ?, ?)';
+    $query = 'INSERT INTO users (name, login, password, picture) VALUES (?, ?, ?, ?)';
 
     $sql = $pdo->prepare($query);
 
-    if ($sql->execute( [ $_POST['name'] , $_POST['login'] , $_POST['password']])) {
+    if ($sql->execute([ $_POST['name'], $_POST['login'], $_POST['password'], $_POST['picture'] ])) {
         $message = "Registo criado com sucesso";
     } else{
         $message = "Não foi possível criar o registo, tente novamente";
@@ -32,6 +32,10 @@ if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="picture">Imagen Perfil</label>
+            <input type="text" name="picture">
         </div>
         <div class="form-group">
             <button>Guardar</button>

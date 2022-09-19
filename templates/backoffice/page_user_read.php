@@ -24,6 +24,7 @@ if ($sql->execute()) {
             <th>Login</th>
             <th>Criado</th>
             <th>Atualizado</th>
+            <th>Foto</th>
             <th>Ações</th>
         </tr>
         <?php foreach ($users as $user) : ?>
@@ -33,8 +34,11 @@ if ($sql->execute()) {
             <td><?php echo $user['login'] ?></td>
             <td><?php echo $user['created_at'] ?></td>
             <td><?php echo $user['updated_at'] ?></td>
-            <td><a href="<?php echo url_generate(['route' => 'user_update', 'id' => $user['id']]); ?>">Editar</a>|
-            <a href="<?php echo url_generate(['route' => 'user_delete', 'id' => $user['id']]); ?>">Apagar</a></td>
+            <td><img width="25" height="25" src="<?php echo $user['picture']?>"></td>
+            <td>
+                <a href="<?php echo url_generate(['route' => 'user_update', 'id' => $user['id']]); ?>">Editar</a>|
+                <a onclick="return confirm('Tem certeza desta ação?')" href="<?php echo url_generate(['route' => 'user_delete', 'id' => $user['id']]); ?>">Apagar</a>
+            </td>
         </tr>
         <?php endforeach ?>
     </table>
