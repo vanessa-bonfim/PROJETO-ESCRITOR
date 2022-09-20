@@ -9,11 +9,10 @@ if (empty($_GET['id']) || !(int)($_GET['id'])) {
 if (
     !empty($_POST['name']) &&
     !empty($_POST['login']) &&
-    !empty($_POST['password']) &&
-    !empty($_POST['picture'])
+    !empty($_POST['password'])
 ) {
-
-    $query = 'UPDATE users SET name = ?, login = ?, password = ?, picture = ? WHERE id = ?';
+    $updatedAt = date('Y-m-d H:i:s');
+    $query = 'UPDATE users SET name = ?, login = ?, password = ?, picture = ?, updated_at = ? WHERE id = ?';
     $sql = $pdo->prepare($query);
 
     if ($sql->execute([
@@ -21,6 +20,7 @@ if (
         $_POST['login'],
         $_POST['password'],
         $_POST['picture'],
+        $updatedAt,
         $_GET['id']
     ])) {
 
