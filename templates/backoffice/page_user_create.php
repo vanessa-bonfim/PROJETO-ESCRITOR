@@ -1,4 +1,14 @@
 <?php
+ if($_SERVER['REQUEST_METHOD'] == 'POST' && 
+        (empty($_POST['name']) || 
+        empty($_POST['login']) || 
+        empty($_POST['password']) || 
+        empty($_POST['picture']) )){
+
+            set_flash_message('Preencha todos os campos!');
+            url_redirect(['route' => 'user_create']);
+
+    }
 
 if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['picture']) ){
 

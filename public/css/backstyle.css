@@ -178,3 +178,7 @@ nav ul .p-relative:hover ul{
     text-align: left;
 }
 
+.page iframe {
+    width: 100%;
+    min-height: 650px;
+}

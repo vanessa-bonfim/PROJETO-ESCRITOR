@@ -24,10 +24,9 @@
                             <ul class="p-absolute">
                                 <li ><a href="<?php echo url_generate(['route' => 'home']); ?>">Home</a></li> 
                                 <li ><a href="<?php echo url_generate(['route' => 'user_create']); ?>">Criar Utilizador</a></li> 
-                                <li ><a href="<?php echo url_generate(['route' => 'user_update']); ?>">Atualizar Utilizador</a></li>
-                                <!-- <li ><a href="<?php /* echo url_generate(['route' => 'user_delete']);  */?>">Deletar Utilizador</a></li> -->
+                                <li ><a href="<?php echo url_generate(['route' => 'user_update']); ?>">Atualizar Utilizador</a></li>                                
                                 <li ><a href="<?php echo url_generate(['route' => 'user_read']); ?>">Utilizadores</a></li> <!-- Esta route retorna a nossa lista de usuários -->
-                                
+                                <li ><a href="<?php echo url_generate(['route' => 'filemanager']);?>">FileManager</a></li>
                             </ul>
                         </li>                              
                                               
