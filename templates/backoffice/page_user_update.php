@@ -2,7 +2,7 @@
 
 if (empty($_GET['id']) || !(int)($_GET['id'])) {
 
-    set_flash_message('Identificação inválida, tente novamente');
+    set_flash_message('É preciso identificar o usuário!');
     url_redirect(['route' => 'user_read']);
 }
 
@@ -49,10 +49,6 @@ if (
     <form class="form" method="POST" action="<?php echo url_generate(['route' => 'user_update']); ?>">
         <h1>Atualizar utilizador</h1>
         <div class="horizontal-line"></div>
-        <div class="form-group flex flex-col">
-            <label for="name">Nome</label>
-            <input type="text" name="name" value="<?php echo $user['name']; ?>">
-        </div>
         <div class="form-group flex flex-col">
             <label for="name">Nome</label>
             <input type="text" name="name" value="<?php echo $user['name']; ?>">

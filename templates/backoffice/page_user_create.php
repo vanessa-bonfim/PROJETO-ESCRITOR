@@ -1,4 +1,7 @@
 <?php
+/**
+ * Server request method foi utilizado pq ao utilizar somente os emptys, entra em um loop.
+ * */
  if($_SERVER['REQUEST_METHOD'] == 'POST' && 
         (empty($_POST['name']) || 
         empty($_POST['login']) || 
