@@ -1,4 +1,3 @@
-
 <div class="page">
     <h1>Bem vindo ao Dashboard</h1>
     <div class="horizontal-line"></div>

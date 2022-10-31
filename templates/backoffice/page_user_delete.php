@@ -32,5 +32,3 @@ if (!empty($_GET['id']) && (int)($_GET['id'])) { //Se não usar esse if, vai fun
  * set_flash_message($message);
  * url_redirect(['route' => 'user_read']);
  */
-
-?>

@@ -8,7 +8,8 @@
  * 
  **/
 
-function set_flash_message($message = '') {
+function set_flash_message($message = '')
+{
 
     $_SESSION['flash_message'] = $message; //"truque" é Gravar a nossa mensagem dentro de uma chave na super global $_SESSION
 
@@ -25,7 +26,8 @@ function set_flash_message($message = '') {
  * 
  */
 
-function get_flash_message() {
+function get_flash_message()
+{
 
 
 
@@ -39,20 +41,16 @@ function get_flash_message() {
 
     $timestampFlashMessage = $_SESSION['flash_message_timestamp']; // Atribuir o valor da chave 'flash_message_timestamp' que está na super global $_SESSION para dentro da variável $timestampFlashMessage.
 
-    
+
     if ($timestampNow > $timestampFlashMessage) { // Se o TIMESTAMP que representa a hora atual for superior ao TIMESTAMP que representa o tempo que a mensagem ficará mantida em sessão
 
         unset($_SESSION['flash_message']); //A função "unset" remove a chave de dentro da super global $_SESSION. Removemos a chave 'flash_message' de dentro da super global $_SESSION. https://www.php.net/manual/en/function.isset.php
 
         unset($_SESSION['flash_message_timestamp']); //Removemos a chave 'flash_message_timestamp' de dentro da super global $_SESSION. 
-        return null; 
-
+        return null;
     } else { //Caso não entre na condição acima, entra no se não.
 
         return $flashMessage; //então retornamos a mensagem que foi gravada em sessão no servidor durante 1 segundo.
 
     }
-
-
-
 }

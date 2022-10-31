@@ -6,7 +6,7 @@
 *define('SITE_URL','http://localhost/exercicios/minha-primeira-aplicacao-php/'); 
 */
 
-define('PAGE_TITLE','Exercício'); // Contante para título da página
+define('PAGE_TITLE', 'Exercício'); // Contante para título da página
 
 define('PAGE_URL', 'http://localhost/trabalho-final/'); //Constante do caminho da url para ser utlizada na função url_redirect.
 

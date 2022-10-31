@@ -1,27 +1,29 @@
 <?php
+
 /**
  * Server request method foi utilizado pq ao utilizar somente os emptys, entra em um loop.
  * */
- if($_SERVER['REQUEST_METHOD'] == 'POST' && 
-        (empty($_POST['name']) || 
-        empty($_POST['login']) || 
-        empty($_POST['password']) || 
-        empty($_POST['picture']) )){
+if (
+    $_SERVER['REQUEST_METHOD'] == 'POST' &&
+    (empty($_POST['name']) ||
+        empty($_POST['login']) ||
+        empty($_POST['password']) ||
+        empty($_POST['picture']))
+) {
 
-            set_flash_message('Preencha todos os campos!');
-            url_redirect(['route' => 'user_create']);
+    set_flash_message('Preencha todos os campos!');
+    url_redirect(['route' => 'user_create']);
+}
 
-    }
-
-if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['picture']) ){
+if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['picture'])) {
 
     $query = 'INSERT INTO users (name, login, password, picture) VALUES (?, ?, ?, ?)';
 
     $sql = $pdo->prepare($query);
 
-    if ($sql->execute([ $_POST['name'], $_POST['login'], $_POST['password'], $_POST['picture'] ])) {
+    if ($sql->execute([$_POST['name'], $_POST['login'], $_POST['password'], $_POST['picture']])) {
         $message = "Registo criado com sucesso";
-    } else{
+    } else {
         $message = "Não foi possível criar o registo, tente novamente";
     }
 
@@ -30,7 +32,7 @@ if (!empty($_POST['name']) && !empty($_POST['login']) && !empty($_POST['password
 }
 
 ?>
- 
+
 <div class="page">
     <form class="form" method="POST" action="<?php echo url_generate(['route' => 'user_create']); ?>">
         <h1>Criar utilizadores</h1>
